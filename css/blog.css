@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: rgb(169,251,246);
+    background: linear-gradient(90deg, rgba(169,251,246,1) 0%, rgba(203,183,251,1) 50%, rgba(217,240,255,1) 100%);
+    color: #333;
+}
+
+.header {
+    background-color: #ffece2;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.title {
+    font-size: 3vw;
+    font-family: "Bebas Neue", system-ui;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+.header-container{
+    display:flex;
+    justify-content: center;
+    gap: 7vw;;
+}
+.header-container img{
+    position: relative;
+    width:70px;
+}
+.navigation {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6600;
+}
+
+.blog-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-title {
+    font-size: 40px;
+    text-align: center;
+    color: #444;
+    animation: fadeInUp 1s ease-in-out;
+}
+.date{
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Parallax Image with 3D Rotation */
+.parallax-container {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateZ(0) rotateY(10deg);
+    transition: transform 0.3s ease-out;
+}
+.intro-sec , .conclusion-sec h3{
+    color: black;
+    font-size: 28px;
+}
+.intro-sec , .conclusion-sec p{
+    font-size: 18px;
+}
+
+.parallax-container:hover .featured-image {
+    transform: translateZ(0) rotateY(0deg);
+}
+
+/* Split Layout with Rotating Image */
+.split-layout {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    padding: 16px;
+    flex: 1;
+}
+.text-content h3{
+    font-size: 25px;
+}
+.text-content p{
+    font-size: 15px;
+    text-align: left
+}
+.image-content {
+    flex: 1;
+}
+
+.split-layout .text-content {
+    padding-right: 20px;
+}
+
+.split-layout img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-out;
+}
+.container{
+    
+}
+/* Full-width Content Block with Diagonal Divider */
+.full-width {
+    margin: 40px 0;
+    position: relative;
+    padding: 40px;
+    background: linear-gradient(45deg, #ff6600, #ff8800);
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+.diagonal-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #ff8800;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.diagonal-text {
+    position: relative;
+    z-index: 2; /* Ensures text is above the divider */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.full-width p {
+    position: relative;
+    z-index: 2; /* Ensures text is above the divider */
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Image Gallery with Zoom-in Effect */
+.image-gallery {
+    margin-top: 50px;
+    position: relative;
+}
+
+.image-gallery h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 32%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.conclusion-sec{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #ff6600;
+}
+
+/* Footer Styling (unchanged) */
+.footer {
+    background: linear-gradient(to right, #D25959, #4b0082);
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-heading-span {
+    font-weight: 700;
+    text-align: center;
+    color: aqua;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.column {
+    width: 33%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.column p {
+    font-size: 18px;
+}
+
+.column h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column ul li {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.column img {
+    margin-left: 10%;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 30px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-icons a:hover {
+    transform: translateX(-5px);
+    color: #0033ff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: gold;
+    font-weight: 600;
+}
+
+/* Additional style for copyright section */
+hr {
+    border-top: 1px solid white;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+}
+
+/* Heartbeat animation for copyright span */
+.copyright span {
+    color: red;
+    animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); opacity: 0; }
+    50% { transform: rotate(-45deg) scale(1.3); opacity: 1; }
+    100% { transform: rotate(-45deg) scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 990px) {
+    .blog-content {
+        padding: 15px;
+    }
+
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .split-layout .text-content,
+    .split-layout .image-content {
+        padding: 20px;
+        flex: 1 1 100%;
+    }
+
+    .image-gallery .images {
+        flex-direction: column;
+    }
+
+    .gallery-image {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo{
+        width: 80px;
+        
+    }
+    .footer-tagline{
+        display: "block";
+    }
+    .footer-container {
+        flex-wrap: wrap;
+    }
+    .footer-heading-span{
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .column {
+        width: calc(50% - 10px); /* Adjusted width to fit two columns with space */
+        margin-bottom: 10px;
+        margin-left: 0px; /* Added margin between columns */
+    }
+    
+    .column:nth-child(2) {
+        margin-top: 102px; /* Add margin-top to the second column */
+        margin-left: 20px;
+    }
+    
+    .column:last-child {
+        margin-right: 0; /* Remove margin from the last column to prevent extra space */
+    }
+    
+    .column:nth-child(5){
+        width: 100%;
+    }
+    
+    .footer-heading-span {
+        margin-left: 0;
+        text-align: center;
+        font-size: 24px; /* Adjusted font size for better visibility */
+    }
+    
+    hr{
+        width: 80%;
+    }
+    
+} 
+
+@media only screen and (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .post-title {
+        font-size: 32px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .featured-image {
+        height: auto;
+    }
+
+    .image-gallery h3 {
+        font-size: 28px;
+    }
+
+    .gallery-image {
+        width: 100%;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    /* .footer-heading-span {
+        font-size: 20px;
+    } */
+}
